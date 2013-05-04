@@ -1,4 +1,7 @@
 Pgcattendance::Application.routes.draw do
+  resources :events
+
+
   resources :sections
 
 
