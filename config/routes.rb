@@ -1,4 +1,7 @@
 Pgcattendance::Application.routes.draw do
+  resources :sections
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
