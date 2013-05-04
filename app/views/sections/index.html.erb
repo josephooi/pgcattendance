@@ -1,4 +1,5 @@
-<h1>Listing sections</h1>
+<h1>Sections</h1>
+
 
 <table>
   <tr>
@@ -8,16 +9,18 @@
     <th></th>
   </tr>
 
-<% @sections.each do |section| %>
-  <tr>
-    <td><%= section.name %></td>
-    <td><%= link_to 'Show', section %></td>
-    <td><%= link_to 'Edit', edit_section_path(section) %></td>
-    <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.name %></td>
+        <td><%= link_to 'Show', section %></td>
+        <td><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Section', new_section_path %>
+  <%= link_to 'New Section', new_section_path %>
+
+
