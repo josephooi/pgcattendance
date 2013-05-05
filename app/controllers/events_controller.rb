@@ -1,6 +1,11 @@
 class EventsController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /events
   # GET /events.json
+
+
   def index
     @events = Event.all
 
@@ -34,6 +39,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+
     @event = Event.find(params[:id])
   end
 

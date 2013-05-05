@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<div class="text-center">
-  <p>
-    <b>Name:</b>
-    <%= @section.name %>
-  </p>
-</div>
 
+<p>
+<b>Section:</b>
+<%= @section.name %>
+</p>
 
+<!--This feature is not yet implemented.-->
+<!--<table>-->
+  <!--<tr>-->
+    <!--Members:-->
+  <!--</tr>-->
+<!--</table>-->
+
+<br>
 
 <%= link_to 'Edit', edit_section_path(@section) %> |
 <%= link_to 'Back', sections_path %>

@@ -1,0 +1,40 @@
+<h2>Edit Account Settings (<%= @user.role %>)</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <div><%= f.label :first %>
+  <%= f.text_field :first %></div>
+
+  <div><%= f.label :last %>
+  <%= f.text_field :last %></div>
+
+  <div><%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <%= f.password_field :password, :autocomplete => "off" %></div>
+
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <%= f.password_field :current_password %></div>
+
+  <div><%= f.label :section_id %>
+  <%= f.collection_select :section_id, Section.all, :id, :name %></div>
+
+  <div><%= f.submit class: "btn btn-large btn-primary" %></div>
+
+<% end %>
+
+<h3>Delete my account</h3>
+
+<p> <%= button_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure you want to delete your account?" }, :method => :delete %></p>
+
+<%= link_to "Back", :back %>

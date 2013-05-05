@@ -7,7 +7,6 @@
     <th>End time</th>
     <th>Category</th>
     <th>Title</th>
-    <th>Description</th>
     <th>Dress</th>
     <th>Call location</th>
     <th></th>
@@ -22,15 +21,20 @@
     <td><%= event.end.strftime("%l:%M %p") %></td>
     <td><%= event.category %></td>
     <td><%= event.title %></td>
-    <td><%= event.description %></td>
     <td><%= event.dress %></td>
     <td><%= event.calllocation %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+
+    <% if can? :update, @event %>
+        <td><%= link_to 'Show details', event %>|</td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <% end %>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+<% if can? :update, @event %>
+  <%= link_to 'New Event', new_event_path %>
+<% end %>
