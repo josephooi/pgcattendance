@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.select :category, [['Rehearsal', 'Rehearsal'], ['Gig', 'Gig'], ['Misc', 'Misc']] %>
   </div>
   <div class="field">
     <%= f.label :date %><br />
@@ -33,17 +33,18 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_field :description %>
   </div>
   <div class="field">
     <%= f.label :dress %><br />
     <%= f.text_field :dress %>
   </div>
   <div class="field">
-    <%= f.label :calllocation %><br />
+    <%= f.label "Call location" %><br />
     <%= f.text_field :calllocation %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div>
+    <%= f.submit class: "btn btn-large btn-primary" %>
   </div>
 <% end %>

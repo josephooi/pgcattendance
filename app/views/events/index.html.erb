@@ -1,15 +1,15 @@
-<h1>Listing events</h1>
+<h1>Events</h1>
 
 <table>
   <tr>
-    <th>Category</th>
     <th>Date</th>
-    <th>Call</th>
-    <th>End</th>
+    <th>Call time</th>
+    <th>End time</th>
+    <th>Category</th>
     <th>Title</th>
     <th>Description</th>
     <th>Dress</th>
-    <th>Calllocation</th>
+    <th>Call location</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,17 +17,16 @@
 
 <% @events.each do |event| %>
   <tr>
+    <td><%= event.date.strftime("%e %b %y") %></td>
+    <td><%= event.call.strftime("%l:%M %p") %></td>
+    <td><%= event.end.strftime("%l:%M %p") %></td>
     <td><%= event.category %></td>
-    <td><%= event.date %></td>
-    <td><%= event.call %></td>
-    <td><%= event.end %></td>
     <td><%= event.title %></td>
     <td><%= event.description %></td>
     <td><%= event.dress %></td>
     <td><%= event.calllocation %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

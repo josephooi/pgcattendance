@@ -1,28 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Category:</b>
-  <%= @event.category %>
-</p>
-
-<p>
   <b>Date:</b>
-  <%= @event.date %>
+  <%= @event.date.strftime("%e %b %y") %>
 </p>
 
 <p>
-  <b>Call:</b>
-  <%= @event.call %>
+  <b>Call time:</b>
+  <%= @event.call.strftime("%l:%M %p") %>
 </p>
 
 <p>
-  <b>End:</b>
-  <%= @event.end %>
+  <b>End time:</b>
+  <%= @event.end.strftime("%l:%M %p") %>
 </p>
 
 <p>
   <b>Title:</b>
   <%= @event.title %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @event.category %>
 </p>
 
 <p>
@@ -36,7 +36,7 @@
 </p>
 
 <p>
-  <b>Calllocation:</b>
+  <b>Call location:</b>
   <%= @event.calllocation %>
 </p>
 

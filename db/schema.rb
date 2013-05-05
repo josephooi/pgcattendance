@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130504233508) do
     t.time     "call"
     t.time     "end"
     t.string   "title"
-    t.text     "description"
+    t.string   "description"
     t.string   "dress"
     t.string   "calllocation"
     t.datetime "created_at",   :null => false

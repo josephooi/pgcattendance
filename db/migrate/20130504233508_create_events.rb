@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration
       t.time :call
       t.time :end
       t.string :title
-      t.text :description
+      t.string :description
       t.string :dress
       t.string :calllocation
 
