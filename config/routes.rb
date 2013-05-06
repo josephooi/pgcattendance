@@ -2,11 +2,9 @@ Pgcattendance::Application.routes.draw do
 
   resources :conflicts
 
-
   devise_for :users
 
   resources :events
-
 
   resources :sections
 

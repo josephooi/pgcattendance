@@ -1,0 +1,5 @@
+admin:
+  email: josephooijw@gmail.com
+  # test1234
+  encrypted_password: $2a$10$VrfJ8Y/ITxqH/MuPBTVypuWoJsjvpvQC24JSbkH.VQZji/stBAs5.
+  role: admin
