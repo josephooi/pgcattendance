@@ -1,20 +1,18 @@
 <h1>Sections</h1>
 
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
   <% @sections.each do |section| %>
       <tr>
         <td><%= section.name %></td>
-        <td><%= link_to 'Show details', section_path(section) %></td>
+        <td><%= link_to 'Details', section_path(section) %>
         <% if can? :update, @section %>
-            <td>|<%= link_to 'Edit', edit_section_path(section) %></td>
+            |<%= link_to 'Edit', edit_section_path(section) %></td>
         <% end %>
       </tr>
   <% end %>

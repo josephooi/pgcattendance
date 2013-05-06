@@ -1,0 +1,49 @@
+<% if (current_user.admin?) %>
+    <h1>All Conflicts</h1>
+<% else # current_user.role == "member" %>
+    <h1>My Conflicts</h1>
+<% end %>
+
+<table class="table">
+  <tr>
+    <th>Member</th>
+    <th>Event</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Conflict</th>
+    <th>Type</th>
+    <th></th>
+  </tr>
+
+<% if (current_user.admin?) %>
+      <% @conflicts_filtered = @conflicts %>
+<% else # current user is a "member" %>
+      <% @conflicts_filtered = Conflict.find_all_by_user_id(current_user.id) %>
+<% end %>
+
+<% @conflicts_filtered.each do |conflict| %>
+  <tr>
+    <td><% @member = User.find(conflict.user_id) %>
+      <%= @member.first %>
+      <%= @member.last %>
+      <% @section = Section.find(@member.section_id) %>
+      (<%= @member.get_section(@section.name) %>)</td>
+    <td><% @event = Event.find(conflict.event_id) %>
+      <%= @event.title %>
+      <%= @event.category %></td>
+    <td>
+      <%= @event.date.strftime("%e %b %y") %>
+    </td>
+    <td>
+      <%= @event.call.strftime("%l:%M %p") %> to <%= @event.end.strftime("%l:%M %p") %>
+    </td>
+    <td><%= conflict.description %></td>
+    <td><%= conflict.conflict conflict.ctype %></td>
+    <td><%= link_to 'Details', conflict %>|<%= link_to 'Edit', edit_conflict_path(conflict) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Conflict', new_conflict_path %>

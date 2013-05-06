@@ -11,36 +11,37 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :category %><br />
-    <%= f.select :category, [['Rehearsal', 'Rehearsal'], ['Gig', 'Gig'], ['Misc', 'Misc']] %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label :date %>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :call %><br />
+    <%= f.label :call, "Call time" %>
     <%= f.time_select :call %>
   </div>
   <div class="field">
-    <%= f.label :end %><br />
+    <%= f.label :end, "End time" %>
     <%= f.time_select :end %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :category %>
+    <%= f.select :category, [['Rehearsal', 'Rehearsal'], ['Gig', 'Gig'], ['Misc', 'Misc']] %>
+  </div>
+  <div class="field">
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :dress %><br />
+    <%= f.label :dress %>
     <%= f.text_field :dress %>
   </div>
   <div class="field">
-    <%= f.label "Call location" %><br />
+    <%= f.label "Call location" %>
     <%= f.text_field :calllocation %>
   </div>
 

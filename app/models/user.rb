@@ -17,4 +17,16 @@ class User < ActiveRecord::Base
       return false
     end
   end
+
+  def get_section(s)
+    if (s == "Tenor 1")
+      return "T1"
+    elsif (s == "Tenor 2")
+      return "T2"
+    elsif (s == "Baritone")
+      return "B1"
+    elsif (s == "Bass")
+      return "B2"
+    end
+  end
 end

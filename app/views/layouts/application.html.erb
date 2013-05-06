@@ -18,16 +18,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="#">PGC Attendance</a>
+      <p class="brand">PGC Attendance</p>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li><%= link_to "Sections", :sections %></li>
           <li><%= link_to "Events", :events %></li>
+          <li><%= link_to "Conflicts", :conflicts %></li>
         </ul>
       </div><!--/.nav-collapse -->
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <% if user_signed_in? %>
+              <p class="nav navbar-text">Logged in as&nbsp;<%= current_user.first %>&nbsp;<%= current_user.last %></p>
               <li><%= link_to 'Account',
                               edit_user_registration_path %></li>
               <li><%= link_to 'Logout',

@@ -1,6 +1,6 @@
 <h1>Events</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Date</th>
     <th>Call time</th>
@@ -9,8 +9,6 @@
     <th>Title</th>
     <th>Dress</th>
     <th>Call location</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -24,9 +22,9 @@
     <td><%= event.dress %></td>
     <td><%= event.calllocation %></td>
 
+    <td><%= link_to 'Details', event %>
     <% if can? :update, @event %>
-        <td><%= link_to 'Show details', event %>|</td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        |<%= link_to 'Edit', edit_event_path(event) %></td>
     <% end %>
 
   </tr>

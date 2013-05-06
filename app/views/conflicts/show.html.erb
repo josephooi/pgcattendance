@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Member:</b>
+  <% @member = User.find(@conflict.user_id) %>
+  <%= @member.first %>
+  <%= @member.last %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <% @event = Event.find(@conflict.event_id) %>
+  <%= @event.title %>
+  <%= @event.category %> on
+  <%= @event.date.strftime("%e %b %y") %> from
+  <%= @event.call.strftime("%l:%M %p") %> to <%= @event.end.strftime("%l:%M %p") %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @conflict.description %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @conflict.details %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @conflict.conflict @conflict.ctype %>
+</p>
+
+
+<%= link_to 'Edit', edit_conflict_path(@conflict) %> |
+<%= link_to 'Delete', @conflict, method: :delete, data: { confirm: 'Are you sure you want to delete this conflict?' } %> |
+<%= link_to 'Back', conflicts_path %>
